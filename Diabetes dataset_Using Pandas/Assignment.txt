@@ -1,0 +1,59 @@
+Attached are two corresponding datasets: Patient_FBG.csv and Patient_Sex.csv
+
+Patient_FBG has 3 fasting blood glucose (FBG) measures across 3 years for 200 patients. 
+Patient_Sex has the same set of patients and their reported sex
+
+
+1. Find the average fasting blood glucose for each year. Your output should look like this (note that these are not the actual answers):
+
+Answer to question 1:
+
+Average FBG for Year_1: 121
+Average FBG for Year_2: 130
+Average FBG for Year_3: 107
+
+2. Determine the diabetic status for each patient and write out how many of each status there are and break it down by sex. Your output should look like something like this (though feel free to format it however you want):
+
+
+Answer to question 2:
+	Healthy	  Transitional	Diabetic		NA
+M	 35	      23	          24		2
+F	 41	      41          33		1
+
+
+Rules for determining patient status:
+
+A fasting blood glucose measure of 125 and below is considered a healthy measure
+A fasting blood glucose measure of 126 and above is considered a diabetic measure
+If a patient only has healthy measures, they should be categorized as "Healthy"
+If a patient's first available measure is diabetic, they should be categorized as "Diabetic", regardless of what the rest of the measures are.
+If a patient's first measure is healthy, but one of their later measures is diabetic, they should be considered "Transitional"
+If a patient has no valid measures (all "NA"), they should be classified as "NA"
+
+Examples:
+		Year_1	Year_2	Year_3
+Patient_1	121	110	94	<--- Healthy
+Patient_2	150	90	121	<--- Diabetic
+Patient_3	98	160	121	<--- Transitional
+Patient_4	NA	NA	106	<--- Healthy
+Patient_5	101	NA	153	<--- Transitional
+Patient_6	NA	NA	NA	<--- NA
+
+
+
+
+
+
+Notes/tricks: 
+Some patients are missing values. Missing measures should NOT be included in the yearly averages. If a patient only has one measure, their status should be determined by that measure. 
+The Patient_Sex.csv file is not ordered. I recommend that your code reads through the Patient_sex file first and that you store that information somewhere (perhaps a Dictionary might be useful...)
+You do not need to send to us the diabetic status for each patient; All we need to is the total #s for each category(see example answer to question 2)
+
+
+BONUS POINTS: If the code you submit writes your answers out to a file, it will be worth +3 bonus points
+
+
+Good luck!
+
+
+
